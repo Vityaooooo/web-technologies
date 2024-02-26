@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg.xsl</title>
+    <style>
+        ul {list-style-type: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>&#60;?xml version="1.0" encoding="UTF-8"?></li>
+        <li>&#60;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"></li>
+        <ul>
+            <li>&#60;xsl:template match="/"></li>
+            <ul>
+                <li>&#60;html></li>
+                <ul>
+                    <li>&#60;head></li>
+                    <ul>
+                        <li>&#60;script src="https://polyfill.io/v3/polyfill.min.js?features=es6">&#60;/script></li>
+                        <li>&#60;script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">&#60;/script></li>
+                    </ul>
+                    <li>&#60;/head></li>
+                    <li>&#60;body></li> 
+                    <ul>
+                        <li>&#60;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"></li>
+                            <ul>
+                                <li>&#60;xsl:apply-templates/></li>
+                            </ul>
+                        <li>&#60;/math></li>
+                    </ul>
+                    <li>&#60;/body></li>
+                </ul>
+                <li>&#60;/html></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="строка"</li>
+            <ul>
+                <li>&#60;mrow></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li>
+                </ul>
+                <li>&#60;/mrow></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="операнд"</li>
+            <ul>
+                <li>&#60;mi></li>
+                <ul>
+                    <li>&#60;xsl:value-of select="current()"/></li>
+                </ul>
+                <li>&#60;/mi></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="оператор"</li>
+            <ul>
+                <li>&#60;mo></li>
+                <ul>
+                    <li>&#60;xsl:value-of select="current()"/></li>
+                </ul>
+                <li>&#60;/mo></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="корень"</li>
+            <ul>
+                <li>&#60;msqrt></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li>
+                </ul>
+                <li>&#60;/msqrt></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="дробь"</li>
+            <ul>
+                <li>&#60;mfrac></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li>
+                </ul>
+                <li>&#60;/mfrac></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="число"</li>
+            <ul>
+                <li>&#60;mn></li>
+                <ul>
+                    <li>&#60;xsl:value-of select="current()"/></li>
+                </ul>
+                <li>&#60;/mn></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="низверх"</li>
+            <ul>
+                <li>&#60;munderover></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li>
+                </ul>
+                <li>&#60;/munderover></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="низ"</li>
+            <ul>
+                <li>&#60;msub></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li>
+                </ul>
+                <li>&#60;/msub></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+
+            <li>&#60;xsl:template match="верх"</li>
+            <ul>
+                <li>&#60;msup></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li>
+                </ul>
+                <li>&#60;/msup></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+        </ul>
+        <li>&#60;/xsl:stylesheet></li>
+    </ul>
+</body>
+</html>

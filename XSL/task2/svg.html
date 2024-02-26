@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg.xsl</title>
+    <style>
+        ul {list-style-type: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>&#60;?xml version="1.0" encoding="UTF-8"?></li>
+        <li>&#60;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"></li>
+        <ul>
+            <li>&#60;xsl:template match="/"></li>
+            <ul>
+                <li>&#60;html></li>
+                <ul>
+                    <li>&#60;body></li> 
+                    <ul>
+                        <li>&#60;xsl:apply-templates/></li>
+                    </ul>
+                    <li>&#60;/body></li>
+                </ul>
+                <li>&#60;/html></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+        </ul>
+    
+        <ul>
+            <li>&#60;xsl:template match="графика"></li>
+            <ul>
+                <li>&#60;svg xmlns="http://www.w3.org/2000/svg" width="{@ширина}" height="{@высота}"></li>
+                <ul>
+                    <li>&#60;xsl:apply-templates/></li> 
+                </ul>
+                <li>&#60;/svg></li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+        </ul>
+    
+        <ul>
+            <li>&#60;xsl:template match="эллипс"></li>
+            <ul>
+                <li>&#60;ellipse id="{@id}" fill="{@заливка}" stroke="{@ободок}" stroke-width="{@ширина-ободка}"
+                    cx="{@cx}" cy="{@cy}" rx="{@rx}" ry="{@ry}"/> </li>
+            </ul>
+            <li>&#60;/xsl:template></li>
+        </ul>
+        <li>&#60;/xsl:stylesheet></li>
+    </ul>
+</body>
+</html>
