@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Vityaooooo</h4>
+
+<script>
+    let url = window.location.search.slice(1)
+    let num = Number(url)
+
+    let count = 0
+    if (num && !isNaN(num)) {
+        let array = new Array(num+1).fill(true)
+  
+        for (let i=2; i <= num; i++) {
+            if (array[i]) {
+                count++
+                for (let j=(i*i); j<=num; j=j+i) {
+                    array[j] = false 
+                }
+            }
+        }
+
+    document.title = count
+    } else {
+        document.title = 'uncorrect query'
+    }
+
+</script>
+</body>
+</html>

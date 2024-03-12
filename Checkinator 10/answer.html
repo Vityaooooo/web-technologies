@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Vityaooooo</h4>
+
+<script>
+    function toNumber(arr) {
+        for (i in arr)
+        arr[i] = Number(arr[i])
+        return arr
+    }
+
+    function findMean(arr) {
+        mean = arr.reduce( (x, y) => x + y) / arr.length
+        return mean
+    }
+
+    function findNumerator(x, y, meanX, meanY) {
+        let acc = 0
+        for (let i = 0; i < x.length; i++) {
+            acc = acc + (x[i]-meanX)*(y[i]-meanY)
+        }
+        return acc
+    }
+
+    function findDenominator(x, meanX) {
+        let acc = 0
+        for (let i = 0; i < x.length; i++) {
+            acc = acc + (x[i]-meanX)**2
+        }
+        return acc
+    }
+
+    let query = window.location.search.slice(1)
+    let firstArray = query.slice(2, query.indexOf('&'))
+    let secondArray = query.slice(query.indexOf('&') + 3)
+
+    const arrayX = toNumber(firstArray.split(','))
+    const arrayY = toNumber(secondArray.split(','))
+
+    if (arrayX.length == arrayY.length) {
+        const meanX = findMean(arrayX)
+        const meanY = findMean(arrayY)
+
+        const numerator = findNumerator(arrayX, arrayY, meanX, meanY)
+        const denominatorX = findDenominator(arrayX, meanX)
+        const denominatorY = findDenominator(arrayY, meanY)
+        const pircon = numerator / (Math.sqrt(denominatorX*denominatorY))
+
+        document.title = pircon
+    } else {
+        document.title = 'uncorrect params'
+    }
+</script>
+</body>
+</html>

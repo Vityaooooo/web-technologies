@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-image: url("https://vityaooooo.github.io/web-technologies/src/img/background.svg");
+  background-image: url("/src/img/background.svg");
   background-repeat: no-repeat;
   background-color: #FA9F2A;
   margin: 0px;
@@ -80,6 +80,7 @@ a {
   align-content: space-between;
   margin-left: 200px;
   width: 1300px;
+  height: 680px;
 }
 .card-section__card-wrapper {
   position: relative;
@@ -154,10 +155,13 @@ a {
 }
 .card__exercise-number {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 185px;
   height: 30px;
   align-items: center;
+}
+.card__exercise-number div {
+  margin-right: 5px;
 }
 .card__exercise-marker {
   background-color: white;
