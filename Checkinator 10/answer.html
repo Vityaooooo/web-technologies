@@ -63,7 +63,7 @@
         const numerator = findNumerator(arrayX, arrayY, meanX, meanY)
         const denominatorX = findDenominator(arrayX, meanX)
         const denominatorY = findDenominator(arrayY, meanY)
-        const pircon = numerator / (Math.sqrt(denominatorX*denominatorY))
+        const pircon = ( numerator / (Math.sqrt(denominatorX*denominatorY)) ).toFixed(3)
 
         document.title = pircon
     } else {
