@@ -7,8 +7,21 @@
 </head>
 <body>
     <h4>Vityaooooo</h4>
+    <p>Enter query (Example - A=55,33,44&B=21,32,43)</p>
+    <input id="query" type="text">
+    <button onclick="addQuery()">Add query</button>
 
 <script>
+    function addQuery() {
+        if (window.location.search) {
+            window.location.search = String(document.getElementById('query').value)
+        } else {  
+            const query = String(document.getElementById('query').value)
+            const url = window.location.href + `?${query}`
+            window.location.href = url
+        }
+    } 
+
     function toNumber(arr) {
         for (i in arr)
         arr[i] = Number(arr[i])
